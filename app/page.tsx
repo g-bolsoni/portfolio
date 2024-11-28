@@ -1,11 +1,9 @@
 import About from "./components/about";
 import Experience from "./components/experience";
-import Projects from "./components/projects";
 import Skills from "./components/skills";
 import GithubRepos from "./components/github-repos";
 import BlogPosts from "./components/blog-posts";
 import Link from "next/link";
-import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -25,23 +23,6 @@ export default function Home() {
           Especializado em criar experiências digitais modernas e de alta
           qualidade
         </p>
-        <div className="flex space-x-6">
-          <SocialLink
-            href="https://linkedin.com/in/yourprofile"
-            icon={<FaLinkedin />}
-            label="LinkedIn"
-          />
-          <SocialLink
-            href="https://github.com/yourusername"
-            icon={<FaGithub />}
-            label="GitHub"
-          />
-          <SocialLink
-            href="https://twitter.com/yourhandle"
-            icon={<FaTwitter />}
-            label="Twitter"
-          />
-        </div>
         <button className="mt-8 px-8 py-3 bg-gradient-to-r from-[#8257E5] to-[#9466FF] rounded-lg text-white font-medium hover:opacity-90 transition-opacity">
           Contato
         </button>
