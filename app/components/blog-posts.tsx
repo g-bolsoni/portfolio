@@ -7,6 +7,7 @@ interface BlogPost {
   title: string;
   created_at: string;
   tabcoins: number;
+  parent_id: null | string;
 }
 
 async function getBlogPosts() {
@@ -15,11 +16,15 @@ async function getBlogPosts() {
     { next: { revalidate: 3600 } }
   );
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch blog posts");
-  }
+  if (!res.ok) throw new Error("Failed to fetch blog posts");
 
-  return res.json();
+  const posts = await res.json();
+
+  if (!posts.length) return [];
+
+  const parent_posts = posts.filter((post: BlogPost) => !post.parent_id);
+
+  return parent_posts;
 }
 
 function formatDate(dateString: string) {
@@ -38,7 +43,7 @@ export default async function BlogPosts() {
     <section className="py-16 bg-[#111111]">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-8 text-center gradient-text">
-          Meus Artigos
+          Artigos
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post: BlogPost) => (
@@ -70,7 +75,7 @@ export default async function BlogPosts() {
             </div>
           ))}
         </div>
-        <div className="text-center mt-8">
+        {/* <div className="text-center mt-8">
           <Link
             href="https://www.tabnews.com.br/gbolsoni/conteudos/1"
             target="_blank"
@@ -79,7 +84,7 @@ export default async function BlogPosts() {
           >
             Ver todos os artigos
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );

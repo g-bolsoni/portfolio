@@ -12,7 +12,7 @@ interface GithubRepo {
 
 async function getGithubRepos() {
   const res = await fetch(
-    "https://api.github.com/users/g-bolsoni/repos?sort=updated&per_page=6",
+    "https://api.github.com/users/g-bolsoni/repos?per_page=6&sort=pushed&direction=desc",
     { next: { revalidate: 3600 } }
   );
 
@@ -36,14 +36,16 @@ export default async function GithubRepos() {
           {repos.map((repo: GithubRepo) => (
             <div
               key={repo.id}
-              className="bg-[#1A1A1A] rounded-lg p-6 hover:border-[#8257E5] border-2 border-transparent transition-all duration-200"
+              className="bg-[#1A1A1A] rounded-lg p-6 hover:border-[#8257E5] border-2 border-transparent transition-all duration-200 flex justify-between flex-col"
             >
-              <h3 className="text-xl font-bold mb-2 text-white capitalize">
-                {repo.name}
-              </h3>
-              <p className="text-gray-400 mb-4 h-20 overflow-hidden">
-                {repo.description || "Sem descrição"}
-              </p>
+              <div>
+                <h3 className="text-xl font-bold mb-2 text-white capitalize">
+                  {repo.name}
+                </h3>
+                <p className="text-gray-400 mb-4 line-clamp-3">
+                  {repo.description || "Sem descrição"}
+                </p>
+              </div>
               <div className="flex justify-between items-center">
                 <div className="flex space-x-4">
                   <span className="flex items-center text-gray-400">
