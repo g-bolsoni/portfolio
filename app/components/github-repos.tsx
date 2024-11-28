@@ -1,5 +1,10 @@
+"use client";
+
+import { motion } from "motion/react";
 import Link from "next/link";
 import { FaGithub, FaStar, FaCodeBranch } from "react-icons/fa";
+import { getRepositories } from "../api/github";
+import { useEffect, useState } from "react";
 
 interface GithubRepo {
   id: number;
@@ -10,21 +15,15 @@ interface GithubRepo {
   forks_count: number;
 }
 
-async function getGithubRepos() {
-  const res = await fetch(
-    "https://api.github.com/users/g-bolsoni/repos?per_page=6&sort=pushed&direction=desc",
-    { next: { revalidate: 3600 } }
-  );
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch repos");
-  }
-
-  return res.json();
-}
-
-export default async function GithubRepos() {
-  const repos = await getGithubRepos();
+export default function GithubRepos() {
+  const [repos, setRepos] = useState<GithubRepo[]>([]);
+  useEffect(() => {
+    async function getRepos() {
+      const repositories = await getRepositories();
+      setRepos(repositories);
+    }
+    getRepos();
+  }, []);
 
   return (
     <section className="py-16 bg-[#111111]">
@@ -32,11 +31,24 @@ export default async function GithubRepos() {
         <h2 className="text-3xl font-bold mb-8 text-center gradient-text">
           Projetos
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {repos.map((repo: GithubRepo) => (
-            <div
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {repos.map((repo: GithubRepo, index) => (
+            <motion.div
               key={repo.id}
               className="bg-[#1A1A1A] rounded-lg p-6 hover:border-[#8257E5] border-2 border-transparent transition-all duration-200 flex justify-between flex-col"
+              variants={{
+                hidden: { opacity: 0, y: -100 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.8, delay: index / 10 },
+                },
+              }}
             >
               <div>
                 <h3 className="text-xl font-bold mb-2 text-white capitalize">
@@ -67,9 +79,9 @@ export default async function GithubRepos() {
                   Ver Repo
                 </Link>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
         <div className="text-center mt-8">
           <Link
             href="https://github.com/g-bolsoni?tab=repositories"
