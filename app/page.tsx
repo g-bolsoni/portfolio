@@ -16,44 +16,16 @@ export default function Home() {
           Desenvolvedor
           <span className="gradient-text"> Full Stack</span>
         </h1>
-        <h2 className="text-2xl md:text-3xl mb-6 text-gray-400">
-          Transformando ideias em código
-        </h2>
-        <p className="max-w-lg mb-8 text-xl text-gray-400">
-          Especializado em criar experiências digitais modernas e de alta
-          qualidade
-        </p>
-        <button className="mt-8 px-8 py-3 bg-gradient-to-r from-[#8257E5] to-[#9466FF] rounded-lg text-white font-medium hover:opacity-90 transition-opacity">
+        <h2 className="text-2xl md:text-3xl mb-6 text-gray-400">Transformando ideias em código</h2>
+        <p className="max-w-lg mb-8 text-xl text-gray-400">Especializado em criar experiências digitais modernas e de alta qualidade</p>
+        <a href="https://wa.me/5516993658338?text=Ol%C3%A1!%20Vi%20seu%20portf%C3%B3lio%20e%20gostei%20bastante.%20Gostaria%20de%20conversar%20sobre%20oportunidades%20ou%20projetos.%20Podemos%20bater%20um%20papo%3F" target="_blank" className="mt-8 px-8 py-3 bg-gradient-to-r from-[#8257E5] to-[#9466FF] rounded-lg text-white font-medium hover:opacity-90 transition-opacity">
           Contato
-        </button>
+        </a>
       </header>
       <About />
       <Experience />
       <Skills />
       <GithubRepos />
-      <BlogPosts />
     </div>
-  );
-}
-
-function SocialLink({
-  href,
-  icon,
-  label,
-}: {
-  href: string;
-  icon: React.ReactNode;
-  label: string;
-}) {
-  return (
-    <Link
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-gray-400 hover:text-[#8257E5] transition-colors duration-200"
-      aria-label={label}
-    >
-      <span className="text-3xl">{icon}</span>
-    </Link>
   );
 }
