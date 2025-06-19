@@ -2,6 +2,7 @@ import About from "./components/about";
 import Experience from "./components/experience";
 import Skills from "./components/skills";
 import GithubRepos from "./components/github-repos";
+import { Analytics } from "@vercel/analytics/next";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <Experience />
       <Skills />
       <GithubRepos />
+      <Analytics />
     </div>
   );
 }
