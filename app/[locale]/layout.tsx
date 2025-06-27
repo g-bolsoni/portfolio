@@ -1,4 +1,4 @@
-import "./globals.css";
+import "../globals.css";
 import { Inter } from "next/font/google";
 import { NextIntlClientProvider, useMessages } from "next-intl";
 
@@ -9,7 +9,7 @@ export const metadata = {
   description: "Professional portfolio showcasing skills and projects",
 };
 
-export default function RootLayout({ children, params: { locale } }: { children: React.ReactNode; params: { locale: string } }) {
+export default function RootLayout({ children, params: { locale } }: { children: React.ReactNode, params: { locale: string } }) {
   const messages = useMessages();
 
   return (
