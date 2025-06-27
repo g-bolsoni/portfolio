@@ -5,6 +5,8 @@ import Skills from "@/app/components/skills";
 import GithubRepos from "@/app/components/github-repos";
 import { Analytics } from "@vercel/analytics/next";
 
+export const dynamic = 'force-static';
+
 export default function Home() {
   const translate = useTranslations("Home");
 

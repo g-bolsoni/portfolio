@@ -52,5 +52,10 @@
     "no_description": "No description",
     "view_repo": "View Repo",
     "view_all_repos": "View all repositories"
+  },
+  "NotFound": {
+    "title": "404 - Page Not Found",
+    "description": "The page you are looking for does not exist.",
+    "backToHome": "Go back to Home"
   }
 }

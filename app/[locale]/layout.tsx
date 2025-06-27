@@ -1,6 +1,8 @@
 import "../globals.css";
 import { Inter } from "next/font/google";
 import { NextIntlClientProvider, useMessages } from "next-intl";
+import { unstable_setRequestLocale } from "next-intl/server";
+import { locales } from "../../navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -9,7 +11,21 @@ export const metadata = {
   description: "Professional portfolio showcasing skills and projects",
 };
 
-export default function RootLayout({ children, params: { locale } }: { children: React.ReactNode, params: { locale: string } }) {
+type Props = {
+  children: React.ReactNode;
+  params: {
+    locale: string;
+  };
+};
+
+export const dynamic = 'force-static';
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+export default function RootLayout({ children, params: { locale } }: Props) {
+  unstable_setRequestLocale(locale);
   const messages = useMessages();
 
   return (
