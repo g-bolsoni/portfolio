@@ -2,45 +2,24 @@
 
 import { motion } from "motion/react";
 import { useState } from "react";
-
-const experiences = [
-  {
-    company: "Irroba E-commerce",
-    position: "Desenvolvedor Full Stack",
-    period: "Jan 2022 - Presente",
-    description: "Criação de layouts personalizados e otimização do desempenho de e-commerces. Garantia de websites rápidos, funcionais e visualmente atrativos.",
-    technologies: ["PHP", "jQuery", "HTML", "SCSS", "React", "Next.js", "Tailwind"],
-  },
-  {
-    company: "Irroba E-commerce",
-    position: "Estagiário",
-    period: "Out 2020 - Dez 2021",
-    description: "Personalização de lojas virtuais e suporte técnico para atender às demandas específicas dos clientes. Integração com plataformas como Google Analytics e Ads.",
-    technologies: ["PHP", "jQuery", "HTML", "CSS"],
-  },
-  {
-    company: "Uni-Facef",
-    position: "Estagiário",
-    period: "Set 2019 - Out 2020",
-    description: "Manutenção de computadores, incluindo limpeza e troca de peças, para garantir o pleno funcionamento dos equipamentos. Suporte ao ambiente tecnológico acadêmico.",
-    technologies: ["Hardware", "Manutenção de Sistemas"],
-  },
-  {
-    company: "Uni-Facef Jr",
-    position: "Consultor",
-    period: "Jul 2019 - Jun 2020",
-    description: "Desenvolvimento e manutenção de páginas estáticas para nossos clientes, com foco em funcionalidade e criação visual, melhorando a presença online.",
-    technologies: ["HTML", "CSS", "JS"],
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function Experience() {
   const [activeTab, setActiveTab] = useState(0);
+  const translate = useTranslations("Experience");
+
+  const experiences = [0, 1, 2, 3].map((index) => ({
+    company: translate(`items.${index}.company`),
+    position: translate(`items.${index}.position`),
+    period: translate(`items.${index}.period`),
+    description: translate(`items.${index}.description`),
+    technologies: translate(`items.${index}.technologies`).split(","),
+  }));
 
   return (
     <section className="py-16 bg-[#111111]">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-center gradient-text">Experiências</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center gradient-text">{translate("title")}</h2>
         <div className="flex flex-col md:flex-row gap-8">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }} className="md:w-1/3">
             {experiences.map((exp, index) => (

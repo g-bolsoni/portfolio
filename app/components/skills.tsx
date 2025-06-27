@@ -15,29 +15,32 @@ import {
 } from "react-icons/fa";
 import { GrMysql } from "react-icons/gr";
 import { SiMongodb } from "react-icons/si";
-
-const skills = [
-  { name: "HTML5", icon: <FaHtml5 /> },
-  { name: "CSS3", icon: <FaCss3Alt /> },
-  { name: "JavaScript", icon: <FaJs /> },
-  { name: "PHP", icon: <FaPhp /> },
-  { name: "React/Next.js", icon: <FaReact /> },
-  { name: "Node.js", icon: <FaNodeJs /> },
-  { name: "SQL", icon: <FaDatabase /> },
-  { name: "MYSQL", icon: <GrMysql /> },
-  { name: "MongoDB", icon: <SiMongodb /> },
-  { name: "GULP", icon: <FaGulp /> },
-  { name: "DOCKER", icon: <FaDocker /> },
-  { name: "SCSS", icon: <FaSass /> },
-  { name: "AWS", icon: <FaAws /> },
-];
+import { useTranslations } from "next-intl";
 
 export default function Skills() {
+  const translate = useTranslations("Skills");
+
+  const skills = [
+    { name: translate("items.0"), icon: <FaHtml5 /> },
+    { name: translate("items.1"), icon: <FaCss3Alt /> },
+    { name: translate("items.2"), icon: <FaJs /> },
+    { name: translate("items.3"), icon: <FaPhp /> },
+    { name: translate("items.4"), icon: <FaReact /> },
+    { name: translate("items.5"), icon: <FaNodeJs /> },
+    { name: translate("items.6"), icon: <FaDatabase /> },
+    { name: translate("items.7"), icon: <GrMysql /> },
+    { name: translate("items.8"), icon: <SiMongodb /> },
+    { name: translate("items.9"), icon: <FaGulp /> },
+    { name: translate("items.10"), icon: <FaDocker /> },
+    { name: translate("items.11"), icon: <FaSass /> },
+    { name: translate("items.12"), icon: <FaAws /> },
+  ];
+
   return (
     <section className="py-16 bg-[#111111]">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-8 text-center gradient-text">
-          Habilidades
+          {translate("title")}
         </h2>
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"

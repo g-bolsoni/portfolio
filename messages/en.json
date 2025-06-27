@@ -4,5 +4,53 @@
     "h2": "Transforming ideas into code",
     "p": "Specialized in creating modern, high-quality digital experiences",
     "a": "Contact"
+  },
+  "About": {
+    "title": "Who I am",
+    "tech": " Full Stack Developer",
+    "text": " My name is Giovane Bolsoni, an enthusiast of technology and web development. I'm interested in developing innovative and effective solutions that make the user experience more intuitive and effective. I'm always looking for knowledge and challenges that allow me to evolve as a developer and contribute in a relevant way."
+  },
+  "Experience": {
+    "title": "Professional Experience",
+    "items": [
+      {
+        "company": "Irroba E-commerce",
+        "position": "Full Stack Developer",
+        "period": "Jan 2022 - Present",
+        "description": "Creation of custom layouts and performance optimization of e-commerces. Ensuring fast, functional, and visually attractive websites.",
+        "technologies": "PHP,jQuery,HTML,SCSS,React,Next.js,Tailwind"
+      },
+      {
+        "company": "Irroba E-commerce",
+        "position": "Intern",
+        "period": "Oct 2020 - Dec 2021",
+        "description": "Customization of virtual stores and technical support to meet specific client demands. Integration with platforms like Google Analytics and Ads.",
+        "technologies": "PHP,jQuery,HTML,CSS"
+      },
+      {
+        "company": "Uni-Facef",
+        "position": "Intern",
+        "period": "Sep 2019 - Oct 2020",
+        "description": "Computer maintenance, including cleaning and parts replacement, to ensure the full functioning of the equipment. Support for the academic technological environment.",
+        "technologies": "Hardware,System Maintenance"
+      },
+      {
+        "company": "Uni-Facef Jr",
+        "position": "Consultant",
+        "period": "Jul 2019 - Jun 2020",
+        "description": "Development and maintenance of static pages for our clients, with a focus on functionality and visual creation, improving online presence.",
+        "technologies": "HTML,CSS,JS"
+      }
+    ]
+  },
+  "Skills": {
+    "title": "Skills",
+    "items": ["HTML5", "CSS3", "JavaScript", "PHP", "React/Next.js", "Node.js", "SQL", "MYSQL", "MongoDB", "GULP", "DOCKER", "SCSS", "AWS"]
+  },
+  "Repository": {
+    "title": "My Repositories",
+    "no_description": "No description",
+    "view_repo": "View Repo",
+    "view_all_repos": "View all repositories"
   }
 }

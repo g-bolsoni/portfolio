@@ -4,5 +4,53 @@
     "h2": "Transformando ideias em código",
     "p": "Especializado em criar experiências digitais modernas e de alta qualidade",
     "a": "Contato"
+  },
+  "About": {
+    "title": "Quem sou",
+    "tech": " Full Stack Developer",
+    "text": " Meu nome é Giovane Bolsoni, um entusiasta da tecnologia e do desenvolvimento web. Estou interessado em desenvolver soluções inovadoras e eficazes que tornam a experiência do usuário mais intuitiva e eficaz. Estou sempre em busca de conhecimento e desafios que me permitam evoluir como desenvolvedor e contribuir de maneira relevante."
+  },
+  "Experience": {
+    "title": "Experiência Profissional",
+    "items": [
+      {
+        "company": "Irroba E-commerce",
+        "position": "Desenvolvedor Full Stack",
+        "period": "Jan 2022 - Presente",
+        "description": "Criação de layouts personalizados e otimização do desempenho de e-commerces. Garantia de websites rápidos, funcionais e visualmente atrativos.",
+        "technologies": "PHP,jQuery,HTML,SCSS,React,Next.js,Tailwind"
+      },
+      {
+        "company": "Irroba E-commerce",
+        "position": "Estagiário",
+        "period": "Out 2020 - Dez 2021",
+        "description": "Personalização de lojas virtuais e suporte técnico para atender às demandas específicas dos clientes. Integração com plataformas como Google Analytics e Ads.",
+        "technologies": "PHP,jQuery,HTML,CSS"
+      },
+      {
+        "company": "Uni-Facef",
+        "position": "Estagiário",
+        "period": "Set 2019 - Out 2020",
+        "description": "Manutenção de computadores, incluindo limpeza e troca de peças, para garantir o pleno funcionamento dos equipamentos. Suporte ao ambiente tecnológico acadêmico.",
+        "technologies": "Hardware,Manutenção de Sistemas"
+      },
+      {
+        "company": "Uni-Facef Jr",
+        "position": "Consultor",
+        "period": "Jul 2019 - Jun 2020",
+        "description": "Desenvolvimento e manutenção de páginas estáticas para nossos clientes, com foco em funcionalidade e criação visual, melhorando a presença online.",
+        "technologies": "HTML,CSS,JS"
+      }
+    ]
+  },
+  "Skills": {
+    "title": "Habilidades",
+    "items": ["HTML5", "CSS3", "JavaScript", "PHP", "React/Next.js", "Node.js", "SQL", "MYSQL", "MongoDB", "GULP", "DOCKER", "SCSS", "AWS"]
+  },
+  "Repository": {
+    "title": "Meus Repositórios",
+    "no_description": "Sem descrição",
+    "view_repo": "Ver Repo",
+    "view_all_repos": "Ver todos os repositórios"
   }
 }

@@ -2,9 +2,10 @@
 
 import { motion } from "motion/react";
 import Link from "next/link";
-import { FaGithub, FaStar, FaCodeBranch } from "react-icons/fa";
+import { FaGithub, FaStar } from "react-icons/fa";
 import { getRepositories } from "../api/github";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 interface GithubRepo {
   id: number;
@@ -17,6 +18,8 @@ interface GithubRepo {
 
 export default function GithubRepos() {
   const [repos, setRepos] = useState<GithubRepo[]>([]);
+  const translate = useTranslations("Repository");
+
   useEffect(() => {
     async function getRepos() {
       const repositories = await getRepositories();
@@ -28,15 +31,8 @@ export default function GithubRepos() {
   return (
     <section className="py-16 bg-[#111111]">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-center gradient-text">
-          Projetos
-        </h2>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
+        <h2 className="text-3xl font-bold mb-8 text-center gradient-text">{translate("title")}</h2>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0 }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {repos.map((repo: GithubRepo, index) => (
             <motion.div
               key={repo.id}
@@ -51,12 +47,8 @@ export default function GithubRepos() {
               }}
             >
               <div>
-                <h3 className="text-xl font-bold mb-2 text-white capitalize">
-                  {repo.name}
-                </h3>
-                <p className="text-gray-400 mb-4 line-clamp-3">
-                  {repo.description || "Sem descrição"}
-                </p>
+                <h3 className="text-xl font-bold mb-2 text-white capitalize">{repo.name}</h3>
+                <p className="text-gray-400 mb-4 line-clamp-3">{repo.description || translate("no_description")}</p>
               </div>
               <div className="flex justify-between items-center">
                 <div className="flex space-x-4">
@@ -69,27 +61,17 @@ export default function GithubRepos() {
                     {repo.forks_count}
                   </span> */}
                 </div>
-                <Link
-                  href={repo.html_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-[#8257E5] hover:text-[#9466FF] transition-colors duration-200"
-                >
+                <Link href={repo.html_url} target="_blank" rel="noopener noreferrer" className="flex items-center text-[#8257E5] hover:text-[#9466FF] transition-colors duration-200">
                   <FaGithub className="mr-2" />
-                  Ver Repo
+                  {translate("view_repo")}
                 </Link>
               </div>
             </motion.div>
           ))}
         </motion.div>
         <div className="text-center mt-8">
-          <Link
-            href="https://github.com/g-bolsoni?tab=repositories"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-[#8257E5] text-white px-6 py-2 rounded hover:bg-[#9466FF] transition-colors duration-200"
-          >
-            Ver todos os repositórios
+          <Link href="https://github.com/g-bolsoni?tab=repositories" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#8257E5] text-white px-6 py-2 rounded hover:bg-[#9466FF] transition-colors duration-200">
+            {translate("view_all_repos")}
           </Link>
         </div>
       </div>
