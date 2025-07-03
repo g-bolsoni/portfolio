@@ -1,8 +1,9 @@
 import "../globals.css";
 import { Inter } from "next/font/google";
-import { NextIntlClientProvider, useMessages } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
-import { locales } from "../../navigation";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
+import { getMessages } from "next-intl/server";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,20 +14,15 @@ export const metadata = {
 
 type Props = {
   children: React.ReactNode;
-  params: {
-    locale: string;
-  };
+  params: { locale: string };
 };
 
-export const dynamic = 'force-static';
+export default async function RootLayout({ children, params: { locale } }: Props) {
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
 
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
-
-export default function RootLayout({ children, params: { locale } }: Props) {
-  unstable_setRequestLocale(locale);
-  const messages = useMessages();
+  const messages = await getMessages({ locale });
 
   return (
     <html lang={locale}>

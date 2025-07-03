@@ -12,7 +12,7 @@
     "@vercel/analytics": "^1.5.0",
     "motion": "^11.12.0",
     "next": "^14.2.30",
-    "next-intl": "^3.15.2",
+    "next-intl": "v4.3.4",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.3.0"
