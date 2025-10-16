@@ -14,9 +14,16 @@
     "title": "Experiência Profissional",
     "items": [
       {
+        "company": "(ꓭ/ CodeBit",
+        "position": "Desenvolvedor Front End",
+        "period": "Set 2025 - Presente",
+        "description": "Responsável pela manutenção e evolução de sistemas web, criando novos componentes e funcionalidades com Vue.js, JavaScript e TypeScript. Foco em código limpo, performance e colaboração em equipe multidisciplinar.",
+        "technologies": "Vue.js, JavaScript, TypeScript, Pinia, Vite e TailwindCSS."
+      },
+      {
         "company": "Irroba E-commerce",
         "position": "Desenvolvedor Full Stack",
-        "period": "Jan 2022 - Presente",
+        "period": "Jan 2022 - Set 2025",
         "description": "Criação de layouts personalizados e otimização do desempenho de e-commerces. Garantia de websites rápidos, funcionais e visualmente atrativos.",
         "technologies": "PHP,jQuery,HTML,SCSS,React,Next.js,Tailwind"
       },
@@ -45,7 +52,25 @@
   },
   "Skills": {
     "title": "Habilidades",
-    "items": ["HTML5", "CSS3", "JavaScript", "PHP", "React/Next.js", "Node.js", "SQL", "MYSQL", "MongoDB", "GULP", "DOCKER", "SCSS", "AWS"]
+    "items": [
+      "Vue",
+      "Pinia",
+      "JavaScript",
+      "DOCKER",
+      "AWS",
+      "PHP",
+      "Vite",
+      "HTML5",
+      "React/Next.js",
+      "Node.js",
+      "SQL",
+      "MYSQL",
+      "MongoDB",
+      "TailwindCSS",
+      "SCSS",
+      "GULP",
+      "CSS3"
+    ]
   },
   "Repository": {
     "title": "Meus Repositórios",

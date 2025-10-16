@@ -12,28 +12,37 @@ import {
   FaPhp,
   FaSass,
   FaAws,
+  FaVuejs
 } from "react-icons/fa";
+
+import { RiTailwindCssFill } from "react-icons/ri";
 import { GrMysql } from "react-icons/gr";
-import { SiMongodb } from "react-icons/si";
+import { SiMongodb, SiVite } from "react-icons/si";
 import { useTranslations } from "next-intl";
+import PiniaIcon from "./icons/pinia";
 
 export default function Skills() {
   const translate = useTranslations("Skills");
 
   const skills = [
-    { name: translate("items.0"), icon: <FaHtml5 /> },
-    { name: translate("items.1"), icon: <FaCss3Alt /> },
+    { name: translate("items.0"), icon: <FaVuejs /> },
+    { name: translate("items.1"), icon: <PiniaIcon /> }, // Pinia
     { name: translate("items.2"), icon: <FaJs /> },
-    { name: translate("items.3"), icon: <FaPhp /> },
-    { name: translate("items.4"), icon: <FaReact /> },
-    { name: translate("items.5"), icon: <FaNodeJs /> },
-    { name: translate("items.6"), icon: <FaDatabase /> },
-    { name: translate("items.7"), icon: <GrMysql /> },
-    { name: translate("items.8"), icon: <SiMongodb /> },
-    { name: translate("items.9"), icon: <FaGulp /> },
-    { name: translate("items.10"), icon: <FaDocker /> },
-    { name: translate("items.11"), icon: <FaSass /> },
-    { name: translate("items.12"), icon: <FaAws /> },
+    { name: translate("items.3"), icon: <FaDocker /> },
+    { name: translate("items.4"), icon: <FaAws /> },
+    { name: translate("items.5"), icon: <FaPhp /> },
+    { name: translate("items.6"), icon: <SiVite /> }, // Vite
+    { name: translate("items.7"), icon: <FaHtml5 /> },
+    { name: translate("items.8"), icon: <FaReact /> },
+    { name: translate("items.9"), icon: <FaNodeJs /> },
+    { name: translate("items.10"), icon: <GrMysql /> },
+    { name: translate("items.11"), icon: <SiMongodb /> },
+    { name: translate("items.12"), icon: <RiTailwindCssFill /> }, // TailwindCSS
+    { name: translate("items.13"), icon: <FaSass /> },
+    { name: translate("items.14"), icon: <FaGulp /> },
+    { name: translate("items.15"), icon: <FaDatabase /> },
+    { name: translate("items.16"), icon: <FaCss3Alt /> },
+
   ];
 
   return (

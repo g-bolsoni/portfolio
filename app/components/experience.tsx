@@ -8,7 +8,7 @@ export default function Experience() {
   const [activeTab, setActiveTab] = useState(0);
   const translate = useTranslations("Experience");
 
-  const experiences = [0, 1, 2, 3].map((index) => ({
+  const experiences = [0, 1, 2, 3, 4].map((index) => ({
     company: translate(`items.${index}.company`),
     position: translate(`items.${index}.position`),
     period: translate(`items.${index}.period`),
