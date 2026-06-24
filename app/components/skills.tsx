@@ -12,9 +12,8 @@ import {
   FaPhp,
   FaSass,
   FaAws,
-  FaVuejs
+  FaVuejs,
 } from "react-icons/fa";
-
 import { RiTailwindCssFill } from "react-icons/ri";
 import { GrMysql } from "react-icons/gr";
 import { SiMongodb, SiVite } from "react-icons/si";
@@ -42,7 +41,6 @@ export default function Skills() {
     { name: translate("items.14"), icon: <FaGulp /> },
     { name: translate("items.15"), icon: <FaDatabase /> },
     { name: translate("items.16"), icon: <FaCss3Alt /> },
-
   ];
 
   return (

@@ -19,9 +19,16 @@ export default function Experience() {
   return (
     <section className="py-16 bg-[#111111]">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-center gradient-text">{translate("title")}</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center gradient-text">
+          {translate("title")}
+        </h2>
         <div className="flex flex-col md:flex-row gap-8">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }} className="md:w-1/3">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            className="md:w-1/3"
+          >
             {experiences.map((exp, index) => (
               <motion.button
                 key={index}
@@ -40,7 +47,13 @@ export default function Experience() {
               </motion.button>
             ))}
           </motion.div>
-          <motion.div className="md:w-2/3 bg-[#1A1A1A] p-6 rounded-lg" initial="hidden" key={activeTab} whileInView="visible" viewport={{ once: true, amount: 0.5 }}>
+          <motion.div
+            className="md:w-2/3 bg-[#1A1A1A] p-6 rounded-lg"
+            initial="hidden"
+            key={activeTab}
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+          >
             <motion.h3
               className="text-2xl font-bold mb-2 text-white"
               variants={{
@@ -92,7 +105,10 @@ export default function Experience() {
               }}
             >
               {experiences[activeTab].technologies.map((tech, index) => (
-                <span key={index} className="bg-[#252525] text-[#8257E5] px-3 py-1 rounded-full text-sm cursor-default">
+                <span
+                  key={index}
+                  className="bg-[#252525] text-[#8257E5] px-3 py-1 rounded-full text-sm cursor-default"
+                >
                   {tech}
                 </span>
               ))}
