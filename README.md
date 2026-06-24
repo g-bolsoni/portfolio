@@ -4,7 +4,7 @@ This is the source code for my personal portfolio website, showcasing my skills,
 
 ## Live Demo
 
-You can view the live version of my portfolio here: [https://gbolsoni.com/](https://gbolsoni.com/)
+You can view the live version of my portfolio here: [http://devbolsoni.com.br//](http://devbolsoni.com.br/)
 
 ## Technologies Used
 
