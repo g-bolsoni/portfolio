@@ -4,16 +4,23 @@ import Experience from "@/app/components/experience";
 import Skills from "@/app/components/skills";
 import GithubRepos from "@/app/components/github-repos";
 import { Analytics } from "@vercel/analytics/next";
+import ParticlesBackground from "../components/ParticlesBackground";
 
 export default function Home() {
   const translate = useTranslations("Home");
 
   return (
-    <main className="min-h-screen bg-[#111111] px-4">
-      <div className="min-h-screen flex flex-col justify-center items-center p-4 text-center relative">
+    <main className="min-h-screen relative bg-[#111111] px-4">
+      {/* Partículas no fundo */}
+      <ParticlesBackground />
+      <div className="min-h-screen flex flex-col justify-center items-center p-4 text-center relative overflow-hidden">
+
+
+        {/* Círculo decorativo — agora com animação de pulso */}
         <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden lg:block">
-          <div className="w-[300px] h-[600px] border-[#8257E5] border-2 rounded-l-[300px] opacity-20" />
+          <div className="w-[300px] h-[600px] border-[#8257E5] border-2 rounded-l-[300px] opacity-20 animate-pulse" />
         </div>
+
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 purple-glow">
           {translate.rich("h1", {
             span: (chunks) => <span className="gradient-text">{chunks}</span>,
@@ -26,11 +33,13 @@ export default function Home() {
         <a
           href="https://wa.me/5516993658338?text=Ol%C3%A1!%20Vi%20seu%20portf%C3%B3lio%20e%20gostei%20bastante.%20Gostaria%20de%20conversar%20sobre%20oportunidades%20ou%20projetos.%20Podemos%20bater%20um%20papo%3F"
           target="_blank"
-          className="mt-8 px-8 py-3 bg-gradient-to-r from-[#8257E5] to-[#9466FF] rounded-lg text-white font-medium hover:opacity-90 transition-opacity"
+          className="mt-8 px-8 py-3 bg-gradient-to-r from-[#8257E5] to-[#9466FF] rounded-lg text-white font-medium hover:opacity-90 transition-opacity relative overflow-hidden group"
         >
+          <span className="absolute inset-0 w-full h-full bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500 skew-x-[-20deg]" />
           {translate("a")}
         </a>
       </div>
+
       <About />
       <Experience />
       <Skills />
