@@ -53,23 +53,28 @@
   "Skills": {
     "title": "Habilidades",
     "items": [
-      "Vue",
+     "Vue",
       "Pinia",
+      "Redis",
       "JavaScript",
-      "DOCKER",
-      "AWS",
+      "TypeScript",
       "PHP",
+      "AdonisJS",
       "Vite",
+      "React",
+      "TailwindCSS",
+      "SASS",
+      "GULP",
+      "CSS3",
       "HTML5",
-      "React/Next.js",
+      "Docker",
+      "AWS",
       "Node.js",
       "SQL",
-      "MYSQL",
-      "MongoDB",
-      "TailwindCSS",
-      "SCSS",
-      "GULP",
-      "CSS3"
+      "MySQL",
+      "PostgreSQL",
+      "Lucid ORM",
+      "MongoDB"
     ]
   },
   "Repository": {

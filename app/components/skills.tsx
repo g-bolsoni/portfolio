@@ -16,31 +16,46 @@ import {
 } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { GrMysql } from "react-icons/gr";
-import { SiMongodb, SiVite } from "react-icons/si";
+import { SiMongodb, SiVite, SiAdonisjs, SiTypescript } from "react-icons/si";
 import { useTranslations } from "next-intl";
+import { BiLogoPostgresql } from "react-icons/bi";
+import { DiRedis } from "react-icons/di";
 import PiniaIcon from "./icons/pinia";
 
 export default function Skills() {
   const translate = useTranslations("Skills");
 
   const skills = [
-    { name: translate("items.0"), icon: <FaVuejs /> },
+    { name: translate("items.0"), icon: <FaVuejs /> }, // Vue
     { name: translate("items.1"), icon: <PiniaIcon /> }, // Pinia
-    { name: translate("items.2"), icon: <FaJs /> },
-    { name: translate("items.3"), icon: <FaDocker /> },
-    { name: translate("items.4"), icon: <FaAws /> },
-    { name: translate("items.5"), icon: <FaPhp /> },
-    { name: translate("items.6"), icon: <SiVite /> }, // Vite
-    { name: translate("items.7"), icon: <FaHtml5 /> },
-    { name: translate("items.8"), icon: <FaReact /> },
-    { name: translate("items.9"), icon: <FaNodeJs /> },
-    { name: translate("items.10"), icon: <GrMysql /> },
-    { name: translate("items.11"), icon: <SiMongodb /> },
-    { name: translate("items.12"), icon: <RiTailwindCssFill /> }, // TailwindCSS
-    { name: translate("items.13"), icon: <FaSass /> },
-    { name: translate("items.14"), icon: <FaGulp /> },
-    { name: translate("items.15"), icon: <FaDatabase /> },
-    { name: translate("items.16"), icon: <FaCss3Alt /> },
+    { name: translate("items.2"), icon: <DiRedis /> }, // Redis
+
+    { name: translate("items.3"), icon: <FaJs /> }, // JavaScript
+    { name: translate("items.4"), icon: <SiTypescript /> }, // TypeScript
+    { name: translate("items.5"), icon: <FaPhp /> }, // PHP
+
+    { name: translate("items.6"), icon: <SiAdonisjs /> }, // AdonisJS
+    { name: translate("items.7"), icon: <SiVite /> }, // Vite
+    { name: translate("items.8"), icon: <FaReact /> }, // React
+
+    { name: translate("items.9"), icon: <RiTailwindCssFill /> }, // TailwindCSS
+    { name: translate("items.10"), icon: <FaSass /> }, // SASS
+    { name: translate("items.11"), icon: <FaGulp /> }, // GULP
+
+    { name: translate("items.12"), icon: <FaCss3Alt /> }, // CSS3
+    { name: translate("items.13"), icon: <FaHtml5 /> }, // HTML5
+    { name: translate("items.14"), icon: <FaDocker /> }, // Docker
+
+    { name: translate("items.15"), icon: <FaAws /> }, // AWS
+    { name: translate("items.16"), icon: <FaNodeJs /> }, // Node.js
+    { name: translate("items.17"), icon: <FaDatabase /> }, // SQL
+
+    { name: translate("items.18"), icon: <GrMysql /> }, // MySQL
+    { name: translate("items.19"), icon: <BiLogoPostgresql /> }, // PostgreSQL
+    { name: translate("items.20"), icon: <FaDatabase /> }, // Lucid ORM
+
+    { name: translate("items.21"), icon: <SiMongodb /> }, // MongoDB
+
   ];
 
   return (
