@@ -6,6 +6,7 @@ import { FaGithub, FaStar } from "react-icons/fa";
 import { getRepositories } from "../api/github";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { GithubPrivateProjectsId } from "../constants/global";
 
 interface GithubRepo {
   id: number;
@@ -19,11 +20,21 @@ interface GithubRepo {
 export default function GithubRepos() {
   const [repos, setRepos] = useState<GithubRepo[]>([]);
   const translate = useTranslations("Repository");
+  const MAX_REPOS = 6;
 
   useEffect(() => {
+    let countRepos = 0;
     async function getRepos() {
       const repositories = await getRepositories();
-      setRepos(repositories);
+      const filteredRepos = repositories.filter((repo: GithubRepo) => {
+        if (countRepos >= MAX_REPOS) return;
+        if (repo.id === GithubPrivateProjectsId.Portifolio || repo.id == GithubPrivateProjectsId.Home) return;
+
+        countRepos++;
+        return repo;
+      });
+
+      setRepos(filteredRepos);
     }
     getRepos();
   }, []);
