@@ -15,12 +15,6 @@ export default function Home() {
       <ParticlesBackground />
       <div className="min-h-screen flex flex-col justify-center items-center p-4 text-center relative overflow-hidden">
 
-
-        {/* Círculo decorativo — agora com animação de pulso */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden lg:block">
-          <div className="w-[300px] h-[600px] border-[#8257E5] border-2 rounded-l-[300px] opacity-20 animate-pulse" />
-        </div>
-
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 purple-glow">
           {translate.rich("h1", {
             span: (chunks) => <span className="gradient-text">{chunks}</span>,

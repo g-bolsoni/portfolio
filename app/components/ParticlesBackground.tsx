@@ -1,4 +1,3 @@
-// components/ParticlesBackground.tsx
 "use client";
 
 import { useEffect, useRef } from "react";
@@ -42,7 +41,7 @@ export default function ParticlesBackground() {
     }
 
     function initDots() {
-      dots = Array.from({ length: 55 }, randomDot);
+      dots = Array.from({ length: 2000 }, randomDot);
     }
 
     function draw() {
