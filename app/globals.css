@@ -31,7 +31,7 @@ body {
 }
 
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#8257E5] to-[#9466FF];
+  @apply bg-gradient-to-r from-[#8257E5] via-[#b8a9ff] to-[#8257E5] bg-[length:200%_auto] bg-clip-text text-transparent animate-[shimmer_3s_linear_infinite];
 }
 
 .purple-glow {

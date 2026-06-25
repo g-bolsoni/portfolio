@@ -41,7 +41,7 @@ export default function ParticlesBackground() {
     }
 
     function initDots() {
-      dots = Array.from({ length: 2000 }, randomDot);
+      dots = Array.from({ length: 500 }, randomDot);
     }
 
     function draw() {
@@ -65,7 +65,7 @@ export default function ParticlesBackground() {
           const dy = a.y - b.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < 90) {
+          if (dist < 200) {
             ctx!.beginPath();
             ctx!.moveTo(a.x, a.y);
             ctx!.lineTo(b.x, b.y);

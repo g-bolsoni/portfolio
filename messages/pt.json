@@ -1,9 +1,14 @@
 {
   "Home": {
-    "h1": "Desenvolvedor <span>Full-stack</span>",
-    "h2": "Transformando ideias em código",
-    "p": "Especializado em criar experiências digitais modernas e de alta qualidade",
-    "a": "Contato"
+    "title": "Desenvolvedor <span>Full-stack</span>",
+    "subTitle": "Transformando ideias em código",
+    "textContactButton": "Contato",
+    "messages": [
+      "Construindo APIs escaláveis.",
+      "Criando interfaces limpas.",
+      "Entregando apps full stack.",
+      "Transformando café em código."
+    ]
   },
   "About": {
     "title": "Quem sou",
