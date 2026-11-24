@@ -2,6 +2,7 @@ import Image, { type StaticImageData } from "next/image";
 import ReactMarkdown from "react-markdown";
 import styles from "./chatbot.module.css";
 import type { ChatMessageData } from "./types";
+import { cleanBotText } from "./cleanBotText";
 
 type Props = {
   message: ChatMessageData;
@@ -20,7 +21,7 @@ export default function ChatMessage({ message, avatar }: Props) {
 
   return (
     <div className={`${styles.message} ${styles.messageBot}`}>
-      <Image src={avatar} alt="" width={30} height={30} className={styles.avatar} />
+      <Image src={avatar} alt="" width={30} height={30} className={styles.avatar} unoptimized />
       <div className={styles.content}>
         <ReactMarkdown
           components={{
@@ -29,7 +30,7 @@ export default function ChatMessage({ message, avatar }: Props) {
             ),
           }}
         >
-          {message.text}
+          {cleanBotText(message.text)}
         </ReactMarkdown>
       </div>
     </div>

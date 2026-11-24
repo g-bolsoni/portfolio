@@ -73,7 +73,7 @@ export default function ChatWindow({
       onKeyDown={handleKeyDown}
     >
       <div className={styles.header}>
-        <Image src={avatar} alt="" width={28} height={28} className={styles.headerLogo} />
+        <Image src={avatar} alt="" width={28} height={28} className={styles.headerLogo} unoptimized />
         <span className={styles.name}>{labels.name}</span>
         <button
           type="button"

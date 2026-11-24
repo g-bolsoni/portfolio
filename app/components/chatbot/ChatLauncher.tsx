@@ -25,7 +25,7 @@ export default function ChatLauncher({ labels, avatar, showHints, onOpen }: Prop
         aria-label={labels.open}
       >
         <span className={styles.launcherAvatarWrapper}>
-          <Image src={avatar} alt="" width={48} height={48} className={styles.launcherAvatar} />
+          <Image src={avatar} alt="" width={48} height={48} className={styles.launcherAvatar} unoptimized />
           {showHints && <span className={styles.badge}>1</span>}
         </span>
       </button>
