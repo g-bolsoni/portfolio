@@ -17,6 +17,16 @@ This project was built using the following technologies:
 - **[next-intl](https://next-intl-docs.vercel.app/)**: A library for internationalization in Next.js.
 - **[React Icons](https://react-icons.github.io/react-icons/)**: A library of popular icon packs for React.
 
+## AI Chatbot
+
+The portfolio has a floating assistant that answers questions about my experience, skills and projects. It runs **entirely in the browser** using Chrome's built-in [Prompt API](https://developer.chrome.com/docs/ai/prompt-api) (Gemini Nano), so there is no backend and no API key.
+
+- **Context:** `app/botData/systemPrompt.txt` (behavior) + `public/llms.txt` (portfolio data, also served at `/llms.txt`). Edit these files to change what the bot knows.
+- **Theme and texts:** `app/botData/chatbot-config.json` and `app/botData/avatar.webp`.
+- **Code:** UI in `app/components/chatbot/`, Prompt API logic in `lib/chatbot/`.
+- **Requirements:** Chrome on desktop with the Prompt API available, and a device able to run the local model (the model is downloaded on first use). On any other browser or device the widget is **hidden**, so visitors never see a broken feature.
+- **Languages:** Portuguese is not officially supported by the Prompt API yet (en, es, ja, de, fr are), so answers in Portuguese may vary in quality.
+
 ## Getting Started
 
 To get a local copy up and running, follow these simple steps.

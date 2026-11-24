@@ -1,0 +1,51 @@
+# Giovane Bolsoni — Desenvolvedor Full Stack
+
+> Portfólio profissional de Giovane Bolsoni, desenvolvedor Full Stack brasileiro com experiência em desenvolvimento web desde 2019. Atualmente atua como Desenvolvedor Front End na CodeBit, trabalhando com Vue.js, TypeScript e TailwindCSS, e tem passagem de quase cinco anos pela Irroba E-commerce, onde trabalhou com lojas virtuais, PHP, React e Next.js. Slogan do site: "Transformando ideias em código".
+
+O site está disponível em português (https://devbolsoni.com.br/pt) e em inglês (https://devbolsoni.com.br/en). É uma página única (one-page) construída com Next.js, com as seções: Quem sou, Experiência Profissional, Habilidades e Meus Repositórios. O contato principal é pelo WhatsApp.
+
+## Quem sou
+
+Giovane Bolsoni é um entusiasta de tecnologia e desenvolvimento web. Seu foco é criar soluções inovadoras e eficazes que tornem a experiência do usuário mais intuitiva. Está sempre em busca de conhecimento e de desafios que o façam evoluir como desenvolvedor e contribuir de forma relevante nos projetos em que atua.
+
+- Nome: Giovane Bolsoni
+- Cargo: Desenvolvedor Full Stack (atualmente Desenvolvedor Front End)
+- Localização: Franca, São Paulo, Brasil
+- Idiomas do site: português e inglês
+
+## Experiência profissional
+
+- **CodeBit — Desenvolvedor Front End** (set/2025 – presente): manutenção e evolução de sistemas web, criação de novos componentes e funcionalidades com Vue.js, JavaScript e TypeScript. Foco em código limpo, performance e colaboração em equipe multidisciplinar. Tecnologias: Vue.js, JavaScript, TypeScript, Pinia, Vite e TailwindCSS.
+- **Irroba E-commerce — Desenvolvedor Full Stack** (jan/2022 – set/2025): criação de layouts personalizados e otimização do desempenho de e-commerces, garantindo sites rápidos, funcionais e visualmente atrativos. Tecnologias: PHP, jQuery, HTML, SCSS, React, Next.js e Tailwind.
+- **Irroba E-commerce — Estagiário** (out/2020 – dez/2021): personalização de lojas virtuais e suporte técnico para demandas específicas de clientes, incluindo integração com Google Analytics e Google Ads. Tecnologias: PHP, jQuery, HTML e CSS.
+- **Uni-Facef — Estagiário** (set/2019 – out/2020): manutenção de computadores (limpeza e troca de peças) e suporte ao ambiente tecnológico acadêmico. Áreas: hardware e manutenção de sistemas.
+- **Uni-Facef Jr — Consultor** (jul/2019 – jun/2020): desenvolvimento e manutenção de páginas estáticas para clientes da empresa júnior, com foco em funcionalidade, criação visual e presença online. Tecnologias: HTML, CSS e JavaScript.
+
+## Habilidades
+
+- Front-end: Vue, Pinia, React, JavaScript, TypeScript, HTML5, CSS3, SASS, TailwindCSS
+- Back-end: Node.js, PHP, AdonisJS
+- Bancos de dados e ORM: SQL, MySQL, PostgreSQL, MongoDB, Redis, Lucid ORM
+- Build e ferramentas: Vite, Gulp
+- Infraestrutura e cloud: Docker, AWS
+
+## Repositórios em destaque
+
+- [Promo-Feed](https://github.com/g-bolsoni/promo-feed): agregador de promoções de tecnologia que lê posts de grupos do Telegram, categoriza os produtos automaticamente (mouse, teclado, monitor, cadeira etc.) e os exibe em um feed PWA com filtros.
+- [Tabnews](https://github.com/g-bolsoni/tabnews): aplicação inspirada no TabNews, criada para explorar conceitos e práticas de desenvolvimento moderno.
+- [ToDo-List](https://github.com/g-bolsoni/ToDo-List): aplicação de lista de tarefas.
+- [Extremo-Leste](https://github.com/g-bolsoni/extremo-leste): projeto web (sem descrição publicada).
+- [Classroom-Live](https://github.com/g-bolsoni/classroom-live): projeto web (sem descrição publicada).
+- [E-Commerce](https://github.com/g-bolsoni/e-commerce): projeto de loja virtual (sem descrição publicada).
+- [Todos os repositórios](https://github.com/g-bolsoni?tab=repositories): lista completa de projetos no GitHub.
+
+## Contato e redes
+
+- [WhatsApp](https://wa.me/5516993658338): canal principal para conversar sobre oportunidades de trabalho ou projetos.
+- [LinkedIn](https://linkedin.com/in/giovane-bolsoni): perfil profissional.
+- [GitHub](https://github.com/g-bolsoni): código-fonte e projetos.
+- [Instagram](https://www.instagram.com/giovane_bolsoni): perfil pessoal.
+
+## Optional
+
+- [Portfólio em inglês](https://devbolsoni.com.br/en): mesma página, traduzida para o inglês.
