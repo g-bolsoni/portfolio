@@ -1,0 +1,14 @@
+{
+  "primaryColor": "#8257E5",
+  "chatbotName": "Assistente do Giovane",
+  "buttonColor": "#8257E5",
+  "backgroundColor": "#111111",
+  "headerColor": "#1A1A1A",
+  "userBubble": "#8257E5",
+  "botBubble": "#252525",
+  "userText": "#FFFFFF",
+  "botText": "#FFFFFF",
+  "welcomeBubble": "Olá! Quer saber mais sobre o Giovane?",
+  "firstBotMessage": "Oi! Pergunte o que quiser sobre a experiência, as habilidades e os projetos do Giovane.",
+  "typingDelay": 0.5
+}
