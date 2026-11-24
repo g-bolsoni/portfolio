@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, type CSSProperties } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import avatar from "@/app/botData/avatar.webp";
 import config from "@/app/botData/chatbot-config.json";
+import { checkRequirements, type RequirementsResult } from "@/lib/chatbot/checkRequirements";
 import styles from "./chatbot.module.css";
 import ChatLauncher from "./ChatLauncher";
 import ChatWindow from "./ChatWindow";
@@ -30,7 +31,37 @@ type Props = {
   locale: string;
 };
 
-export default function Chatbot({ systemPrompt, locale }: Props) {
+/**
+ * Só renderiza o widget se o navegador consegue rodar o modelo local
+ * (Chrome com a Prompt API e dispositivo compatível). Caso contrário, o
+ * visitante não vê nada: nenhum botão quebrado, nenhum erro no console.
+ */
+export default function Chatbot(props: Props) {
+  const [requirements, setRequirements] = useState<RequirementsResult | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    checkRequirements()
+      .then((result) => {
+        if (!cancelled) setRequirements(result);
+      })
+      .catch(() => {
+        // falha ao verificar = tratado como sem suporte
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  if (!requirements?.languageOptions) return null;
+  return <ChatWidget {...props} requirements={requirements} />;
+}
+
+function ChatWidget({
+  systemPrompt,
+  locale,
+  requirements,
+}: Props & { requirements: RequirementsResult }) {
   const labels = DEFAULT_LABELS;
   const [open, setOpen] = useState(false);
   const [opened, setOpened] = useState(false);
@@ -40,6 +71,7 @@ export default function Chatbot({ systemPrompt, locale }: Props) {
     locale,
     labels,
     firstMessage: config.firstBotMessage,
+    requirements,
   });
 
   const handleOpen = () => {

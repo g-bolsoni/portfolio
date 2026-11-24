@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { checkRequirements, type RequirementsStatus } from "@/lib/chatbot/checkRequirements";
+import type { RequirementsResult } from "@/lib/chatbot/checkRequirements";
 import { PromptService, isAbortError, isQuotaExceeded } from "@/lib/chatbot/promptService";
 import type { ChatLabels, ChatMessageData } from "./types";
 
@@ -11,6 +11,8 @@ type Options = {
   locale: string;
   labels: ChatLabels;
   firstMessage: string;
+  /** Resultado de checkRequirements(), já executado na montagem do widget. */
+  requirements: RequirementsResult;
 };
 
 type Phase = "idle" | "starting" | "ready" | "generating" | "unavailable";
@@ -25,7 +27,7 @@ const uid = (prefix: string) => `${prefix}-${Date.now()}-${Math.random().toStrin
  * do clique em "abrir", que é o gesto exigido para baixar o modelo), faz o
  * streaming das respostas e permite interromper.
  */
-export function useChatbot({ systemPrompt, locale, labels, firstMessage }: Options) {
+export function useChatbot({ systemPrompt, locale, labels, firstMessage, requirements }: Options) {
   const [messages, setMessages] = useState<ChatMessageData[]>([
     { id: "welcome", role: "bot", text: firstMessage },
   ]);
@@ -55,40 +57,17 @@ export function useChatbot({ systemPrompt, locale, labels, firstMessage }: Optio
     setMessages((prev) => [...prev, { id: uid("b"), role: "bot", text }]);
   }, []);
 
-  const unavailableText = useCallback(
-    (status: RequirementsStatus): string => {
-      if (status === "unsupported-browser") return labels.unsupportedBrowser;
-      if (status === "api-missing") return labels.apiMissing;
-      return labels.unavailable;
-    },
-    [labels],
-  );
-
   /** Chamar no clique de abrir o chat. Inicializa o modelo uma única vez. */
   const start = useCallback(async () => {
-    if (startedRef.current) return;
+    const { languageOptions, status } = requirements;
+    if (startedRef.current || !languageOptions) return;
     startedRef.current = true;
     setPhase("starting");
     setLoadingModel(true);
-    const t0 = performance.now();
-    const log = (step: string, extra?: unknown) =>
-      console.info(`[chatbot] ${step} (+${Math.round(performance.now() - t0)}ms)`, extra ?? "");
 
     try {
-      log("verificando requisitos");
-      const { status, languageOptions } = await checkRequirements();
-      log("requisitos", { status, languageOptions });
-
-      if (!languageOptions) {
-        if (!mountedRef.current) return;
-        addBotMessage(unavailableText(status));
-        setPhase("unavailable");
-        return;
-      }
-
       if (status !== "available") setDownloadProgress(0);
 
-      log("criando sessão");
       await serviceRef.current!.init({
         systemPrompt: `${systemPrompt}\n\nIdioma atual do site: ${locale}.`,
         languageOptions,
@@ -97,7 +76,6 @@ export function useChatbot({ systemPrompt, locale, labels, firstMessage }: Optio
         },
       });
 
-      log("sessão pronta");
       if (!mountedRef.current) return;
       setPhase("ready");
     } catch (error) {
@@ -112,7 +90,7 @@ export function useChatbot({ systemPrompt, locale, labels, firstMessage }: Optio
         setDownloadProgress(null);
       }
     }
-  }, [addBotMessage, labels.errorGeneric, locale, systemPrompt, unavailableText]);
+  }, [addBotMessage, labels.errorGeneric, locale, requirements, systemPrompt]);
 
   const send = useCallback(
     async (text: string) => {
