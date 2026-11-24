@@ -4,6 +4,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { getMessages } from "next-intl/server";
+import ChatbotLoader from "@/app/components/chatbot/ChatbotLoader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +30,7 @@ export default async function RootLayout({ children, params: { locale } }: Props
       <body className={`${inter.className} dark bg-gray-900 text-gray-100`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
+          <ChatbotLoader locale={locale} />
         </NextIntlClientProvider>
       </body>
     </html>
